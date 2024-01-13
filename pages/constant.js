@@ -1,9 +1,7 @@
 export const API_URL = "https://volta-rpc.energyweb.org/";
 
 // metamask wallet private key
-export const PRIVATE_KEY =
-  "3f6cd404be33ecb66e69b274b015fa6d38909e881cc2124bb7bc8710d9ea6e1d";
-
+export const PRIVATE_KEY = process.env.wallet_key;
 // intial worikng test.sol
 // export const contractAddress = "0xC08a1bd7c6faDA4aA76fc6d3255E4d2492A56d86";
 
@@ -11,9 +9,8 @@ export const PRIVATE_KEY =
 // export const contractAddress = "0x1bb70F48E5310D2c3Bb07eAc62cbC70D274F7f43";
 
 // s123.sol
-export const contractAddress = "0x15C28cD249f2Ca46056990ab950bA53922D9c0D4";
-export const Web3StorageAPI =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDI4MzQ0ODk4NzhFMTVGRDM0MDM5M0MxNjNBMzMzNjViQjJkMUZjQzYiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2OTU1NTQ4NjQyMjMsIm5hbWUiOiJpcGZzLWJsb2NrY2hhaW4ifQ.Lc4IfriqerBZi4eARYakbBJttTQ5NOZZ2-8cFIqY9rY";
+export const contractAddress = process.env.address;
+export const Web3StorageAPI = process.env.API;
 
 // test.sol
 // export const contractAbi = [
