@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     async function connectToMetaMask() {
       try {
-        // Requesting access to the user's MetaMask accounts
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
@@ -29,7 +28,6 @@ function App() {
     }
 
     if (window.ethereum) {
-      // If MetaMask is detected, you can add a login button to trigger the login process.
       window.ethereum.on("accountsChanged", connectToMetaMask);
     }
 
@@ -78,7 +76,6 @@ function App() {
 
   const handleLoginClick = async () => {
     try {
-      // Requesting access to the user's MetaMask accounts
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
@@ -94,30 +91,45 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {isConnected ? (
-        <div>
-          <h1>Connected to MetaMask</h1>
-          <p>Account: {account}</p>
-          {isOwner ? (
-            <div>
-              <h1>Owner</h1>
-              <FileUpload />
-              <FileList />
-            </div>
-          ) : (
-            <div>
-              <p>You are not the owner of the contract.</p>
-              {isAccessGranted ? <FileList /> : <p>no access granted</p>}
-            </div>
-          )}
-        </div>
-      ) : (
-        <div>
-          <button onClick={handleLoginClick}>Login with MetaMask</button>
-          <p>Connecting to MetaMask...</p>
-        </div>
-      )}
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-500">
+      <div className="bg-white p-8 rounded-lg shadow-md text-gray-800 w-full max-w-2xl">
+        {isConnected ? (
+          <div>
+            <h1 className="text-2xl font-bold mb-4 text-gray-800">
+              Connected to MetaMask
+            </h1>
+            <p className="mb-2 text-gray-600">Account: {account}</p>
+            {isOwner ? (
+              <div>
+                <h1 className="text-xl font-bold mb-2 text-gray-800">Owner</h1>
+                <FileUpload />
+                <FileList />
+              </div>
+            ) : (
+              <div>
+                <p className="mb-2 text-gray-600">
+                  You are not the owner of the contract.
+                </p>
+                {isAccessGranted ? (
+                  <FileList />
+                ) : (
+                  <p className="text-red-500">No access granted</p>
+                )}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div>
+            <button
+              onClick={handleLoginClick}
+              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none"
+            >
+              Login with MetaMask
+            </button>
+            <p className="mt-4 text-gray-600">Connecting to MetaMask...</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

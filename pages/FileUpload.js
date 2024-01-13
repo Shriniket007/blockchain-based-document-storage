@@ -75,45 +75,73 @@ function FileUpload() {
   };
 
   return (
-    <div>
-      <h2>File Upload</h2>
-      <input
-        type="text"
-        placeholder="Enter Filename"
-        onChange={handleFileNameChange}
-      />
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={uploadFile}>Upload</button>
+    <div className="mt-8">
+      <h2 className="text-2xl font-semibold mb-4 text-gray-800">File Upload</h2>
 
-      <div>
-        <h3>Access Control</h3>
-        <label>Grant Access:</label>
+      <div className="mb-4">
         <input
           type="text"
-          placeholder="Enter account address"
-          id="grantAccount"
+          placeholder="Enter Filename"
+          onChange={handleFileNameChange}
+          className="p-2 border border-gray-300 rounded"
         />
-        <button
-          onClick={() =>
-            handleGrantAccess(document.getElementById("grantAccount").value)
-          }
-        >
-          Grant
-        </button>
+      </div>
 
-        <label>Revoke Access:</label>
+      <div className="mb-4">
         <input
-          type="text"
-          placeholder="Enter account address"
-          id="revokeAccount"
+          type="file"
+          onChange={handleFileChange}
+          className="border border-gray-300 rounded p-2"
         />
-        <button
-          onClick={() =>
-            handleRevokeAccess(document.getElementById("revokeAccount").value)
-          }
-        >
-          Revoke
-        </button>
+      </div>
+
+      <button
+        onClick={uploadFile}
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none"
+      >
+        Upload
+      </button>
+
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold mb-2 text-gray-800">
+          Access Control
+        </h3>
+
+        <div className="mb-4">
+          <label className="block text-gray-600">Grant Access:</label>
+          <input
+            type="text"
+            placeholder="Enter account address"
+            id="grantAccount"
+            className="p-2 border border-gray-300 rounded"
+          />
+          <button
+            onClick={() =>
+              handleGrantAccess(document.getElementById("grantAccount").value)
+            }
+            className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 focus:outline-none"
+          >
+            Grant
+          </button>
+        </div>
+
+        <div>
+          <label className="block text-gray-600">Revoke Access:</label>
+          <input
+            type="text"
+            placeholder="Enter account address"
+            id="revokeAccount"
+            className="p-2 border border-gray-300 rounded"
+          />
+          <button
+            onClick={() =>
+              handleRevokeAccess(document.getElementById("revokeAccount").value)
+            }
+            className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 focus:outline-none"
+          >
+            Revoke
+          </button>
+        </div>
       </div>
     </div>
   );

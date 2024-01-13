@@ -33,18 +33,19 @@ function FileList() {
   };
 
   return (
-    <div>
-      <h2>File List</h2>
+    <div className="mt-8">
+      <h2 className="text-2xl font-semibold mb-4 text-gray-800">File List</h2>
       {loading ? (
-        <p>Loading...</p>
+        <p className="text-gray-600">Loading...</p>
       ) : files.length > 0 ? (
-        <ul>
+        <ul className="list-disc list-inside">
           {files.map((file, index) => (
-            <li key={index}>
+            <li key={index} className="mb-2">
               <a
                 href={`https://${file.hash}.ipfs.w3s.link/uploads`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
               >
                 {file.fileName} - {file.hash}
               </a>
@@ -52,7 +53,7 @@ function FileList() {
           ))}
         </ul>
       ) : (
-        <p>No files found.</p>
+        <p className="text-gray-600">No files found.</p>
       )}
     </div>
   );
