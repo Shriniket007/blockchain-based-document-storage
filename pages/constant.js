@@ -2,11 +2,6 @@ export const API_URL = "https://volta-rpc.energyweb.org/";
 
 // metamask wallet private key
 export const PRIVATE_KEY = process.env.wallet_key;
-// intial worikng test.sol
-// export const contractAddress = "0xC08a1bd7c6faDA4aA76fc6d3255E4d2492A56d86";
-
-// test2.sol
-// export const contractAddress = "0x1bb70F48E5310D2c3Bb07eAc62cbC70D274F7f43";
 
 // s123.sol
 export const contractAddress = process.env.address;
@@ -475,12 +470,3 @@ export const contractAbi = [
     type: "function",
   },
 ];
-// new contract adress
-// 0xe7273D9Cff0Cb5722eEF0a6EccfC886AB826CF2E
-// https://volta-explorer.energyweb.org/address/0xe7273D9Cff0Cb5722eEF0a6EccfC886AB826CF2E/
-
-// https://bafybeid2vny27skfulpv63j5uuoul3ouk7swtvrrzpvoskapb2rkalxu6m.ipfs.w3s.link/uploads
-
-// https://ipfs.io/ipfs/<CID>
-// Content Identifier (CID)
-// IPFS currently uses SHA-256 by default, which produces a 256 bit (32 byte) output, and that output is encoded with Base58. Base58 is a binary-to-text encoding scheme originally developed for Bitcoin and has the advantage that letters that might be mistaken for each other in certain fonts (like zero and the capital letter O) are not included.
