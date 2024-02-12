@@ -12,6 +12,10 @@
 
 ![Image 6](public/img-6.png)
 
+![Image 6](public/ipfs-image1.png)
+
+![Image 6](public/blockchain-image.png)
+
 ## About
 This project focuses on decentralized document storage, leveraging blockchain technology for enhanced security and reliability. It utilizes IPFS (InterPlanetary File System) for file storage and smart contracts to store document hash values, ensuring integrity and immutability.
 
